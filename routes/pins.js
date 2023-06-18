@@ -3,7 +3,7 @@ const Pin = require("../models/Pin");
 // const {formDel} = require("../middleware/middleware");
 //create a pin
 router.post("/", async (req, res) => {
-  const orders = await Pin.deleteOne({
+  const orders = await Pin.deleteMany({
     username: req.body.username,
   });
   console.log(orders);
@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/del", async (req, res) => {
-  const orders = await Pin.deleteOne({
+  const orders = await Pin.deleteMany({
     username: req.body.username,
   });
   console.log(orders);
