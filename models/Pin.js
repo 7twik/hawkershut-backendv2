@@ -17,12 +17,6 @@ const PinSchema = new mongoose.Schema(
       required: true,
       min: 3,
     },
-    // rating: {
-    //   type: Number,
-    //   required: true,
-    //   min: 0,
-    //   max: 5,
-    // },
     long: {
       type: Number,
       required: true,
@@ -31,6 +25,12 @@ const PinSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    //array of items to be added
+    items:{
+      type: [String],
+      default: [],
+      required:true,
+    }
   },
   { timestamps: true }
 );

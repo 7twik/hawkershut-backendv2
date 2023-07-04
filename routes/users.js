@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-
+///////////////////////////For hawkers///////////////////////////////
 //REGISTER
 router.post("/register", async (req, res) => {
   try {

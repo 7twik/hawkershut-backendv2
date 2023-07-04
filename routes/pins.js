@@ -11,6 +11,7 @@ router.post("/", async (req, res) => {
               long: req.body.long,
               title: req.body.title,
               desc: req.body.desc,
+              items:req.body.items,
             },{
               upsert: true,
             }

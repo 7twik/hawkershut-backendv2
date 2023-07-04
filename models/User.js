@@ -1,3 +1,4 @@
+/////////////////For hawkers/////////////////////
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(
