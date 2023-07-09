@@ -64,4 +64,11 @@ console.log(orders);
 
 
 });
+router.route("/admin").get((req, res) => {
+  // ROUTE:/api/web3/admin
+
+  User.find().then((foundNotes) =>
+    res.json(foundNotes)
+  );
+});
 module.exports = router;
