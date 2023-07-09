@@ -50,7 +50,7 @@ router.post("/login", async (req, res) => {
     console.log(res)
   }
 });
-router.post("/block", async (req, res) => {
+router.post("/block", async (req, res) => {//api/users
   const orders = await User.updateOne(  
     {
         "username": req.body.username                  

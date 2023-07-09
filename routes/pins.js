@@ -77,5 +77,19 @@ router.get("/category", async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.post("/block", async (req, res) => {//api/pins/block
+  const orders = await User.updateOne(  
+    {
+        "username": req.body.username                  
+    },{
+      blocked: true,
+    },{
+      upsert: true,
+    }
+);
+console.log(orders);
+
+
+});
 
 module.exports = router;

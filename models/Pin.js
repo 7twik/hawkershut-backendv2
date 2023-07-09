@@ -25,6 +25,11 @@ const PinSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    blocked:{
+      type: Boolean,
+      default: false,
+      required:true,
+    },
     //array of items to be added
     items:{
       type: [String],
