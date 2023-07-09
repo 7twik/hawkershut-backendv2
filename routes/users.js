@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-///////////////////////////For hawkers///////////////////////////////
+
 //REGISTER
 router.post("/register", async (req, res) => {
   try {
@@ -14,6 +14,9 @@ router.post("/register", async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: hashedPassword,
+      url: req.body.url,
+      aadhar: req.body.aadhar,
+      blocked: false
     });
 
     //save user and respond
@@ -24,6 +27,7 @@ router.post("/register", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 //LOGIN
 router.post("/login", async (req, res) => {
@@ -46,5 +50,18 @@ router.post("/login", async (req, res) => {
     console.log(res)
   }
 });
+router.post("/block", async (req, res) => {
+  const orders = await User.updateOne(  
+    {
+        "username": req.body.username                  
+    },{
+      blocked: true,
+    },{
+      upsert: true,
+    }
+);
+console.log(orders);
 
+
+});
 module.exports = router;

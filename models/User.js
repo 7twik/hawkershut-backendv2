@@ -1,4 +1,3 @@
-/////////////////For hawkers/////////////////////
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(
@@ -21,6 +20,21 @@ const UserSchema = new mongoose.Schema(
       required: true,
       min: 6,
     },
+    url:{
+      type: String,
+      default: "https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Download-Image.png"
+    },
+    aadhar:{
+      type: String,
+      required: true,
+      min: 12,
+      max: 12,
+      unique: true,
+    },
+    blocked:{
+      type: Boolean,
+      default: false,
+    }
   },
   { timestamps: true }
 );
