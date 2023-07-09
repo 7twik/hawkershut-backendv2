@@ -2,6 +2,7 @@ const User = require("../models/User");
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 
+const Pin = require("../models/Pin");
 //REGISTER
 router.post("/register", async (req, res) => {
   try {
@@ -60,7 +61,16 @@ router.post("/block", async (req, res) => {//api/users
       upsert: true,
     }
 );
-console.log(orders);
+const orders2 = await Pin.updateOne(  
+  {
+      "username": req.body.username                  
+  },{
+    blocked: true,
+  },{
+    upsert: true,
+  }
+);
+console.log(orders2);
 
 
 });
