@@ -27,8 +27,6 @@ const UserSchema = new mongoose.Schema(
     aadhar:{
       type: String,
       required: true,
-      min: 12,
-      max: 12,
       unique: true,
     },
     blocked:{
