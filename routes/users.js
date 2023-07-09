@@ -55,7 +55,7 @@ router.post("/block", async (req, res) => {//api/users
     {
         "username": req.body.username                  
     },{
-      blocked: true,
+      blocked: false,
     },{
       upsert: true,
     }
