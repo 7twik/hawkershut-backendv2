@@ -82,7 +82,7 @@ router.post("/block", async (req, res) => {//api/pins/block
     {
         "username": req.body.username                  
     },{
-      blocked: false,
+      blocked: true,
     },{
       upsert: true,
     }
@@ -91,5 +91,3 @@ console.log(orders);
 
 
 });
-
-module.exports = router;
