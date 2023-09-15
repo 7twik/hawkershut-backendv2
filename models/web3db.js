@@ -41,6 +41,10 @@ const Web3Db = new mongoose.Schema(
     ContractStage: {
       type: String, //Completed, Waiting
     },
+    RejMessage: {
+      type: String,
+      default: "No message"
+    }
   },
   { timestamps: true }
 );

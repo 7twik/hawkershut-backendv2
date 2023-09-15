@@ -28,6 +28,7 @@ const orderMakingRoute = async (req, res) => {
     ContractStage: ContractStage,
     Hash: Hash,
     Amt: Amt,
+    RejMessage: "no message for now"
   });
   console.log(newNote);
   newNote.save();
@@ -86,6 +87,9 @@ const denyCustomer = async (req, res) => {
       UserStage: "Cancelled",
       HawkerStage: "Failed",
       ContractStage: "Completed",
+      RejMessage: "Customer cancelled the order"
+    },{
+      upsert: true
     },
     function (err, raw) {
       if (err) {
@@ -184,6 +188,7 @@ const denyHawker = async (req, res) => {
       HawkerStage: "Cancelled",
       UserStage: "Hawker Cancellation",
       ContractStage: "Completed",
+      RejMessage: req.body.Message,
     },
     function (err, raw) {
       if (err) {
