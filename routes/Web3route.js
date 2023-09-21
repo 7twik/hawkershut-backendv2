@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const { admin } = require("../controllers/userController");
-const { orderMakingRoute, customerDone, getCustomer, acceptCustomer, denyCustomer, getHawker, hawkerDone, acceptHawker, hawkerReach, hawkerRecieve, denyHawker } = require("../controllers/web3Controller");
+const { orderMakingRoute, customerDone, getCustomer, acceptCustomer, denyCustomer, getHawker, hawkerDone, acceptHawker, hawkerReach, hawkerRecieve, denyHawker,admin } = require("../controllers/web3Controller");
 const Web3Dbb = require("../models/web3db");
 
 ////////////////CUSTOMER SIDE LINKS////////////////////////////////
